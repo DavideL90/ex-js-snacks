@@ -5,6 +5,8 @@ arrayObjNames = ["zucchina1", "zucchina2", "zucchina3",
                 "zucchina10"];
 //Creo un array per contenere gli oggetti zucchine
 zucchineArray = [];
+//Inizializzo una variabile per sommare i vari pesi
+pesoTot = 0;
 //Faccio un ciclo per riempire l'array degli oggetti
 for (var i = 0; i < arrayObjNames.length; i++) {
     arrayObjNames[i] = {
@@ -19,3 +21,8 @@ for (var i = 0; i < arrayObjNames.length; i++) {
   zucchineArray.push(arrayObjNames[i]);
 }
 console.log(zucchineArray);
+//faccio un ciclo nell'array con i nomi degli oggetti per sommare i loro pesi
+for (var i = 0; i < zucchineArray.length; i++) {
+  pesoTot += zucchineArray[i].peso;
+}
+console.log(pesoTot);
