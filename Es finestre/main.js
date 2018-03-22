@@ -1,6 +1,6 @@
 var openWindow = {
-  "tab" : ["Facebook", "Hubspot", "hubspot", "Instagram"],
-  "active_tab" : 2
+  "tab" : ["Fatto", "Facebook", "Corriere", "Corriere"],
+  "active_tab" : 1
 };
 var avoidSocial = ["Facebook", "Twitter", "Instagram", "Google+", "Tumblr"];
 console.log(openWindow.tab);
@@ -10,7 +10,7 @@ for (var i = 0; i < openWindow.tab.length; i) {
   if(avoidSocial.includes(openWindow.tab[i])){
     openWindow.tab.splice(i, 1);
     //Decremento la finestra attiva se la finestra cancellata viene prima della finestra attiva
-    if(i <= openWindow.active_tab){
+    if(i < openWindow.active_tab){
       openWindow.active_tab--;
       console.log(openWindow.active_tab);
     }
