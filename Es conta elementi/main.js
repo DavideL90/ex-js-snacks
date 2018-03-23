@@ -1,27 +1,32 @@
-var arrayNumbers = [1, 2, 3, 4, 5, 6];
-var firstNumber = 2;
-var secondNumber = 0;
+var arrayNumbers = [11, 12, 13, 100, -2, 25];
+var firstNumber = -2;
+var secondNumber = 100;
 var totValori = 0;
-if((firstNumber < arrayNumbers.length) && (secondNumber < arrayNumbers.length)){
-  totValori = countElements(arrayNumbers, firstNumber, secondNumber);
+//Verifico che i numeri inseriti siano nel range dei valori
+console.log(arrayNumbers);
+totValori = countElements(arrayNumbers, firstNumber, secondNumber);
+if(totValori == 0){
+  document.write("Mi spiace ma non esiste nessun numero compreso tra i tuoi due numeri");
+}
+else if(totValori == 1){
+  //Ho messo questa condizione solo per cambiare la frase al singolare in caso di un elemento solo
+  document.write("C'è " + totValori + " elemento incluso tra i tuoi numeri");
 }
 else{
-  alert("Hai inserito uno o più valori errati.");
+  document.write("Ci sono " + totValori + " elementi inclusi tra i tuoi numeri");
 }
 console.log(totValori);
 
 
 function countElements(arrNumbs, num1, num2){
   var count = 0;
-  if(num1 > num2){
-    for (var i = num2; i <= num1; i++) {
+  for (var i = 0; i < arrNumbs.length; i++) {
+    if((num1 <= arrNumbs[i]) && (num2 >= arrNumbs[i])){
+      count++;
+    }
+    else if((num1 >= arrNumbs[i]) && (num2 <= arrNumbs[i])){
       count++;
     }
   }
-  else{
-      for (var i = num1; i <= num2; i++) {
-        count++;
-      }
-    }
   return count;
 }
